@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: shop-ai-agent
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLAUDE_API_KEY
+        sync: false
+      - key: SHOPIFY_API_KEY
+        sync: false
+      - key: REDIRECT_URL
+        value: https://srv-d35a4didbo4c73f78jt0.onrender.com/auth/callback

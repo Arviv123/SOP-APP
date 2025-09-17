@@ -1,28 +1,20 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "ead43d5352ade3ee3d16ce9761a906ff"
-name = "shop-chat-agent"
-handle = "shop-chat-agent"
-application_url = "https://srv-d35a4didbo4c73f78jt0.onrender.com"
+name = "ARVIV123"
+application_url = "https://example.com"
 embedded = true
 
 [build]
+automatically_update_urls_on_dev = true
 include_config_on_deploy = true
 
 [webhooks]
-api_version = "2025-04"
+api_version = "2025-10"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "customer_read_customers,customer_read_orders,customer_read_store_credit_account_transactions,customer_read_store_credit_accounts,unauthenticated_read_product_listings"
 
 [auth]
-redirect_urls = [ "https://srv-d35a4didbo4c73f78jt0.onrender.com/api/auth" ]
-
-[pos]
-embedded = false
-
-[mcp.customer_authentication]
-redirect_uris = [
-  "https://srv-d35a4didbo4c73f78jt0.onrender.com/callback"
-]
+redirect_urls = [ "https://example.com/api/auth" ]
