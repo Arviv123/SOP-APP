@@ -23,6 +23,24 @@ export default function App() {
         <p className={styles.text}>
           A reference app for shop chat agent.
         </p>
+        {showForm && (
+          <div className={styles.form}>
+            <h2>Install this app in your Shopify store</h2>
+            <Form method="get" action="/app">
+              <label htmlFor="shop">
+                Enter your shop domain:
+              </label>
+              <input
+                type="text"
+                id="shop"
+                name="shop"
+                placeholder="your-store.myshopify.com"
+                required
+              />
+              <button type="submit">Install App</button>
+            </Form>
+          </div>
+        )}
       </div>
     </div>
   );
