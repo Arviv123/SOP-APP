@@ -7,7 +7,7 @@ services:
     branch: main
     autoDeploy: true
     rootDir: ./
-    buildCommand: npm install && npm run build
+    buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /
     envVars:
