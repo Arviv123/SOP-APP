@@ -1,6 +1,17 @@
-name = "chat-bubble"
+name = "AI Chat Assistant"
 
 uid = "770e3d9e-3fe9-98c2-0c3d-fe71ee70a7db5cc97b39"
 
 type = "theme"
+
+[extension_points]
+"*" = "*"
+
+[build]
+command = ""
+watch = [
+  "blocks/**/*",
+  "assets/**/*",
+  "locales/**/*"
+]
 
