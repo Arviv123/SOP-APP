@@ -1,12 +1,15 @@
 services:
   - type: web
-    name: shop-ai-agent
+    name: sop-app
+    runtime: node
     env: node
     plan: free
     branch: main
     autoDeploy: true
-    buildCommand: npm install && npm run setup && npm run build
+    rootDir: ./
+    buildCommand: npm ci && npm run setup && npm run build
     startCommand: npm start
+    healthCheckPath: /
     envVars:
       - key: NODE_ENV
         value: production
@@ -15,11 +18,6 @@ services:
       - key: SHOPIFY_API_KEY
         sync: false
       - key: REDIRECT_URL
-        value: https://srv-d35a4didbo4c73f78jt0.onrender.com/auth/callback
+        value: https://sop-app-9t14.onrender.com/auth/callback
       - key: DATABASE_URL
         value: file:./data.db
-
-databases:
-  - name: shop-ai-agent-db
-    databaseName: shopaiagent
-    user: shopaiagent
