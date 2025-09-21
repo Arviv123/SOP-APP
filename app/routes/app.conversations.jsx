@@ -13,7 +13,6 @@ import {
   Pagination,
   Box,
   Modal,
-  ScrollArea,
 } from "@shopify/polaris";
 import { TitleBar } from "@shopify/app-bridge-react";
 import { useLoaderData, useSearchParams, Form } from "@remix-run/react";
@@ -243,7 +242,7 @@ export default function Conversations() {
 
               <Box background="bg-surface-secondary" padding="400" borderRadius="200">
                 <Text variant="headingSm" marginBlockEnd="300">Conversation History</Text>
-                <ScrollArea height="400px">
+                <Box style={{maxHeight: "400px", overflow: "auto"}}>
                   <BlockStack gap="300">
                     {mockConversationHistory.map((msg, index) => (
                       <Box
@@ -264,7 +263,7 @@ export default function Conversations() {
                       </Box>
                     ))}
                   </BlockStack>
-                </ScrollArea>
+                </Box>
               </Box>
             </BlockStack>
           )}
